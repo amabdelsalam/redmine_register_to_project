@@ -1,0 +1,24 @@
+<fieldset>
+  <p>
+  	Select projects that will be allowed for users to register to:
+  	</p>
+
+  <p>
+    <%= content_tag(:label, "Projects") %>
+
+    <%-
+      projects = Project.all
+      selected = @settings['projects'].collect(&:to_i) unless @settings['projects'].blank?
+      selected ||= []
+    -%>
+
+    <%=
+      select_tag("settings[projects]",
+                 content_tag(:option, '') + options_from_collection_for_select(projects, :id, :name, selected ),
+                 :multiple => true,
+                 :size => 5)
+    %>
+    
+  </p>
+  
+</fieldset>
