@@ -1,3 +1,7 @@
 = register_to_project
 
-Description goes here
+Redmine Plugin that allows administrator to select a set of projects that users can registers to without administration action. The registration includes CAPATCHA validation.
+
+Simply, include the plugin in the redmine plugins folder, run rake db:migrate_plugins, and then let users access the registration form at /projectuser/register
+
+Note: the ambethia-recaptcha plugin should be included in the plugin folder in order for CAPATCHA validation to work.
